@@ -8,92 +8,201 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="mod-menu">
+    <div class="menu-container">
         <div class="menu-header">
-            <h1>FiveM Mod Menu</h1>
-            <div class="toggle-wrapper">
-                <input type="checkbox" id="menu-toggle" class="toggle-checkbox">
-                <label for="menu-toggle" class="toggle-label"></label>
-            </div>
+            <h1>xaxaxa <span>MOD MENU</span></h1>
+            <div class="menu-close-btn"><i class="fas fa-times"></i></div>
+        </div>
+        
+        <div class="menu-tabs">
+            <div class="tab active" data-tab="player"><i class="fas fa-user"></i> Player</div>
+            <div class="tab" data-tab="vehicle"><i class="fas fa-car"></i> Vehicle</div>
+            <div class="tab" data-tab="weapons"><i class="fas fa-gun"></i> Weapons</div>
+            <div class="tab" data-tab="world"><i class="fas fa-globe"></i> World</div>
+            <div class="tab" data-tab="misc"><i class="fas fa-cog"></i> Misc</div>
         </div>
         
         <div class="menu-content">
-            <div class="category">
-                <div class="category-header">
-                    <h2>Vehicle Options</h2>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="category-content">
-                    <div class="option">
-                        <span>Repair Vehicle</span>
-                        <button class="action-button" data-action="repair_vehicle">Repair</button>
-                    </div>
-                    <div class="option">
-                        <span>Vehicle Godmode</span>
-                        <div class="toggle-wrapper">
-                            <input type="checkbox" id="vehicle-godmode" class="toggle-checkbox" data-action="toggle_vehicle_godmode">
-                            <label for="vehicle-godmode" class="toggle-label"></label>
-                        </div>
-                    </div>
-                    <div class="option">
-                        <span>Vehicle Boost</span>
-                        <input type="range" min="1" max="100" value="50" class="slider" id="vehicle-boost" data-action="set_vehicle_boost">
+            <!-- Player Tab -->
+            <div class="tab-content active" id="player-tab">
+                <div class="option">
+                    <div class="option-label">God Mode</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="godmode" class="toggle-checkbox">
+                        <label for="godmode" class="toggle-label"></label>
                     </div>
                 </div>
-            </div>
-
-            <div class="category">
-                <div class="category-header">
-                    <h2>Player Options</h2>
-                    <i class="fa-solid fa-chevron-down"></i>
+                
+                <div class="option">
+                    <div class="option-label">Invisibility</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="invisibility" class="toggle-checkbox">
+                        <label for="invisibility" class="toggle-label"></label>
+                    </div>
                 </div>
-                <div class="category-content">
-                    <div class="option">
-                        <span>Player Health</span>
-                        <input type="range" min="0" max="100" value="100" class="slider" id="player-health" data-action="set_player_health">
+                
+                <div class="option">
+                    <div class="option-label">No Clip</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="noclip" class="toggle-checkbox">
+                        <label for="noclip" class="toggle-label"></label>
                     </div>
-                    <div class="option">
-                        <span>Player Armor</span>
-                        <input type="range" min="0" max="100" value="100" class="slider" id="player-armor" data-action="set_player_armor">
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Super Jump</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="superjump" class="toggle-checkbox">
+                        <label for="superjump" class="toggle-label"></label>
                     </div>
-                    <div class="option">
-                        <span>Player Godmode</span>
-                        <div class="toggle-wrapper">
-                            <input type="checkbox" id="player-godmode" class="toggle-checkbox" data-action="toggle_player_godmode">
-                            <label for="player-godmode" class="toggle-label"></label>
-                        </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Player Speed</div>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="10" value="1" class="slider" id="speed-slider">
+                        <span class="slider-value">1</span>
                     </div>
                 </div>
             </div>
-
-            <div class="category">
-                <div class="category-header">
-                    <h2>Weapon Options</h2>
-                    <i class="fa-solid fa-chevron-down"></i>
+            
+            <!-- Vehicle Tab -->
+            <div class="tab-content" id="vehicle-tab">
+                <div class="option">
+                    <div class="option-label">Vehicle God Mode</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="vehicle-godmode" class="toggle-checkbox">
+                        <label for="vehicle-godmode" class="toggle-label"></label>
+                    </div>
                 </div>
-                <div class="category-content">
-                    <div class="option">
-                        <span>Give All Weapons</span>
-                        <button class="action-button" data-action="give_all_weapons">Give</button>
+                
+                <div class="option">
+                    <div class="option-label">Unlimited Boost</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="unlimited-boost" class="toggle-checkbox">
+                        <label for="unlimited-boost" class="toggle-label"></label>
                     </div>
-                    <div class="option">
-                        <span>Infinite Ammo</span>
-                        <div class="toggle-wrapper">
-                            <input type="checkbox" id="infinite-ammo" class="toggle-checkbox" data-action="toggle_infinite_ammo">
-                            <label for="infinite-ammo" class="toggle-label"></label>
-                        </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Vehicle Speed Boost</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="vehicle-speed" class="toggle-checkbox">
+                        <label for="vehicle-speed" class="toggle-label"></label>
                     </div>
-                    <div class="option">
-                        <span>No Recoil</span>
-                        <div class="toggle-wrapper">
-                            <input type="checkbox" id="no-recoil" class="toggle-checkbox" data-action="toggle_no_recoil">
-                            <label for="no-recoil" class="toggle-label"></label>
-                        </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Spawn Vehicle</div>
+                    <div class="button spawn-vehicle">SPAWN</div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Vehicle Model</div>
+                    <select class="dropdown" id="vehicle-model">
+                        <option value="adder">Adder</option>
+                        <option value="zentorno">Zentorno</option>
+                        <option value="t20">T20</option>
+                        <option value="insurgent">Insurgent</option>
+                        <option value="kuruma">Kuruma</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Weapons Tab -->
+            <div class="tab-content" id="weapons-tab">
+                <div class="option">
+                    <div class="option-label">Infinite Ammo</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="infinite-ammo" class="toggle-checkbox">
+                        <label for="infinite-ammo" class="toggle-label"></label>
                     </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">No Reload</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="no-reload" class="toggle-checkbox">
+                        <label for="no-reload" class="toggle-label"></label>
+                    </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Give All Weapons</div>
+                    <div class="button give-weapons">GIVE</div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Remove All Weapons</div>
+                    <div class="button remove-weapons">REMOVE</div>
+                </div>
+            </div>
+            
+            <!-- World Tab -->
+            <div class="tab-content" id="world-tab">
+                <div class="option">
+                    <div class="option-label">Set Time</div>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="23" value="12" class="slider" id="time-slider">
+                        <span class="slider-value">12:00</span>
+                    </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Weather</div>
+                    <select class="dropdown" id="weather">
+                        <option value="clear">Clear</option>
+                        <option value="rain">Rain</option>
+                        <option value="thunder">Thunder</option>
+                        <option value="snow">Snow</option>
+                        <option value="blizzard">Blizzard</option>
+                    </select>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Blackout</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="blackout" class="toggle-checkbox">
+                        <label for="blackout" class="toggle-label"></label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Misc Tab -->
+            <div class="tab-content" id="misc-tab">
+                <div class="option">
+                    <div class="option-label">Teleport to Waypoint</div>
+                    <div class="button teleport">TELEPORT</div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Show Player Names</div>
+                    <div class="toggle">
+                        <input type="checkbox" id="show-names" class="toggle-checkbox">
+                        <label for="show-names" class="toggle-label"></label>
+                    </div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Clear Area</div>
+                    <div class="button clear-area">CLEAR</div>
+                </div>
+                
+                <div class="option">
+                    <div class="option-label">Save Settings</div>
+                    <div class="button save-settings">SAVE</div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="keyboard-controls">
+        <p>OPEN/CLOSE: <span>F5</span></p>
+        <p>NAVIGATE: <span>↑/↓</span></p>
+        <p>SELECT: <span>ENTER</span></p>
+        <p>BACK: <span>BACKSPACE</span></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html> 
