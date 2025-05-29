@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveM Mod Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="mod-menu">
+        <div class="menu-header">
+            <h1>FiveM Mod Menu</h1>
+            <div class="toggle-wrapper">
+                <input type="checkbox" id="menu-toggle" class="toggle-checkbox">
+                <label for="menu-toggle" class="toggle-label"></label>
+            </div>
+        </div>
+        
+        <div class="menu-content">
+            <div class="category">
+                <div class="category-header">
+                    <h2>Vehicle Options</h2>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div class="option">
+                        <span>Repair Vehicle</span>
+                        <button class="action-button" data-action="repair_vehicle">Repair</button>
+                    </div>
+                    <div class="option">
+                        <span>Vehicle Godmode</span>
+                        <div class="toggle-wrapper">
+                            <input type="checkbox" id="vehicle-godmode" class="toggle-checkbox" data-action="toggle_vehicle_godmode">
+                            <label for="vehicle-godmode" class="toggle-label"></label>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <span>Vehicle Boost</span>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="vehicle-boost" data-action="set_vehicle_boost">
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-header">
+                    <h2>Player Options</h2>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div class="option">
+                        <span>Player Health</span>
+                        <input type="range" min="0" max="100" value="100" class="slider" id="player-health" data-action="set_player_health">
+                    </div>
+                    <div class="option">
+                        <span>Player Armor</span>
+                        <input type="range" min="0" max="100" value="100" class="slider" id="player-armor" data-action="set_player_armor">
+                    </div>
+                    <div class="option">
+                        <span>Player Godmode</span>
+                        <div class="toggle-wrapper">
+                            <input type="checkbox" id="player-godmode" class="toggle-checkbox" data-action="toggle_player_godmode">
+                            <label for="player-godmode" class="toggle-label"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-header">
+                    <h2>Weapon Options</h2>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div class="option">
+                        <span>Give All Weapons</span>
+                        <button class="action-button" data-action="give_all_weapons">Give</button>
+                    </div>
+                    <div class="option">
+                        <span>Infinite Ammo</span>
+                        <div class="toggle-wrapper">
+                            <input type="checkbox" id="infinite-ammo" class="toggle-checkbox" data-action="toggle_infinite_ammo">
+                            <label for="infinite-ammo" class="toggle-label"></label>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <span>No Recoil</span>
+                        <div class="toggle-wrapper">
+                            <input type="checkbox" id="no-recoil" class="toggle-checkbox" data-action="toggle_no_recoil">
+                            <label for="no-recoil" class="toggle-label"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
